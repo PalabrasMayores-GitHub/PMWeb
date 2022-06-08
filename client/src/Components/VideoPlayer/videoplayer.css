@@ -1,0 +1,10 @@
+.video-iframe{
+    width: min(max(70vw, 400px), 875px);
+    height: calc(min(max(70vw, 400px), 875px) * .6);
+    border-radius: 10px;
+}
+
+.videoPlayer{
+    margin: 10px ;
+    margin-bottom: 20px;
+}

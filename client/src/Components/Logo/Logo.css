@@ -1,0 +1,4 @@
+.logoImage{
+    padding-top: 10px;
+    height: min(max(26.5vw, 175px), 300px);
+}

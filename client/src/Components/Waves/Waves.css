@@ -1,0 +1,14 @@
+.WaveImage1{
+    position: fixed;
+    top: 50vh;
+    left: 0;
+    z-index: -1;
+}
+
+.WaveImage2{
+    position: fixed;
+    top: 0;
+    left: 20;
+    z-index: -1;
+    transform: rotate(30deg);
+}
