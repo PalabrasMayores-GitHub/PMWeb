@@ -26,11 +26,8 @@ const App = () => {
   
   useEffect(() => {
     params = calculatePageParams();
-    fetch('http://localhost:3001/getstory', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(params)
-    })
+    if(params == undefined) return;
+    fetch(`/story/${params.videoID}`)
     .then((response) => {
       if(response.status === 400){
         throw new Error();
@@ -38,8 +35,8 @@ const App = () => {
       return response.json();
     })
     .then(videoData => {
-      if(videoData.id !== undefined){
-        setUrl(`https://www.youtube.com/embed/${videoData.video_id}`);
+      if(videoData.videoID !== undefined){
+        setUrl(`https://www.youtube.com/embed/${videoData.videoID}`);
         setPersonInfo(videoData)
       }
     })
@@ -52,8 +49,7 @@ const App = () => {
       <Logo/>
       <Videoplayer url={url}/>
       <Waves/>
-      <Bibliography name={personInfo.nombre} text={personInfo.text}/>
-      <Stars></Stars>
+      <Bibliography name={personInfo.PersonName} text={personInfo.Bibliography}/>
     </div>
     :
     <div>
