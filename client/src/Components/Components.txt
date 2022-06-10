@@ -7,15 +7,6 @@ Bbliography
 Logo
     - Logo image
 
-Stars
-    - Holder of stars and Upload Button
-
-    + Star 
-        - Togglable component star
-
-    + Upload Button
-        - Upload review button
-
 Waves
     - Decoration assets 
 

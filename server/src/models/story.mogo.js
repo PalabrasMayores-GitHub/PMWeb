@@ -13,6 +13,10 @@ const storySchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    storyID: {
+        type: Number,
+        required: true
+    },
     comments: [{
         name: {
             type: String,

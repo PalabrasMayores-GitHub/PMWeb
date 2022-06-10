@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react';
 import Videoplayer from './Components/VideoPlayer/videoplayer';
 import Logo from './Components/Logo/Logo';
 import { Waves } from './Components/Waves/Waves';
-import Stars from './Components/Stars/Stars';
 import Bibliography from './Components/Bibliografy/Bibliografy';
 
 const calculatePageParams = () => {
@@ -27,7 +26,7 @@ const App = () => {
   useEffect(() => {
     params = calculatePageParams();
     if(params == undefined) return;
-    fetch(`/story/${params.videoID}`)
+    fetch(`/story/${params.storyID}`)
     .then((response) => {
       if(response.status === 400){
         throw new Error();
@@ -35,7 +34,7 @@ const App = () => {
       return response.json();
     })
     .then(videoData => {
-      if(videoData.videoID !== undefined){
+      if(videoData.storyID !== undefined){
         setUrl(`https://www.youtube.com/embed/${videoData.videoID}`);
         setPersonInfo(videoData)
       }

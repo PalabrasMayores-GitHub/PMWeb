@@ -1,7 +1,7 @@
 const {StoriesModel} = require('./story.mogo')
 
-async function getStoryFromDB (videoID) {
-    const response = await StoriesModel.findOne({videoID}, {_id:0})
+async function getStoryFromDB (storyID) {
+    const response = await StoriesModel.findOne({storyID}, {_id:0})
     return response;
 }
 
